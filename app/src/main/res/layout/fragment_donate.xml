@@ -1,9 +1,164 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="probeginners.hackcsi.view.fragments.DonateFragment"
-    android:layout_marginTop="?attr/actionBarSize">
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="probeginners.hackcsi.view.fragments.DonateFragment"
+        android:layout_marginTop="?attr/actionBarSize">
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:text="Book Name"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="25sp"
+                    android:fontFamily="casual"
+                    android:padding="5sp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Angels"
+                    android:padding="5sp"
+                    android:textSize="25sp"
+                    android:id="@+id/b_name"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:text="Year Of Publishing"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="25sp"
+                    android:fontFamily="casual"
+                    android:padding="5sp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="2011"
+                    android:padding="5sp"
+                    android:textSize="25sp"
+                    android:id="@+id/b_year"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:text="Author"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="25sp"
+                    android:fontFamily="casual"
+                    android:padding="5sp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Merian Angels"
+                    android:padding="5sp"
+                    android:textSize="25sp"
+                    android:id="@+id/b_author"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:text="M.R.P."
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="25sp"
+                    android:fontFamily="casual"
+                    android:padding="5sp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="INR 150"
+                    android:padding="5sp"
+                    android:textSize="25sp"
+                    android:id="@+id/b_mrp"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:text="Your Name"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="25sp"
+                    android:fontFamily="casual"
+                    android:padding="5sp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Ravi Prakash"
+                    android:padding="5sp"
+                    android:textSize="25sp"
+                    android:id="@+id/y_name"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:text="Your Address"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="25sp"
+                    android:fontFamily="casual"
+                    android:padding="5sp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="ABC, DEF Nagar, New Delhi- 110065"
+                    android:padding="5sp"
+                    android:textSize="25sp"
+                    android:id="@+id/y_address"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:text="Your Phone Number"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="25sp"
+                    android:fontFamily="casual"
+                    android:padding="5sp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="7042337414"
+                    android:padding="5sp"
+                    android:textSize="25sp"
+                    android:id="@+id/y_phone"
+                    android:gravity="center"/>
+
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15sp"
+                    android:backgroundTint="#ff0000"
+                    android:text="SUBMIT"
+                    android:textSize="25sp"
+                    android:textColor="#fff"
+                    android:layout_gravity="bottom"/>
+
+            </LinearLayout>
+        </ScrollView>
 
 </FrameLayout>
