@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import classes.DonateBookInfo;
+import classes.PurchaseInfo;
 import probeginners.hackcsi.NavActivity;
 import probeginners.hackcsi.R;
 
@@ -121,7 +122,7 @@ public class Donepurchaseadapter<T> extends BaseAdapter {
                 String key = dataSnapshot.getKey();
                 T model = dataSnapshot.getValue(Donepurchaseadapter.this.mModelClass);
                 Log.e("lock","12");
-                DonateBookInfo orderClass=(DonateBookInfo) model;
+               PurchaseInfo orderClass=(PurchaseInfo) model;
                 if(orderClass.getEmail().equals(NavActivity.email)&&orderClass.getStatus().equals("DONE")) {
                     Log.e("lock","56");
                     //Log.e("doraemon","shinchan"); if (previousChildName == null) {
@@ -155,7 +156,7 @@ public class Donepurchaseadapter<T> extends BaseAdapter {
                 // One of the mModels changed. Replace it in our list and name mapping
                 String key = dataSnapshot.getKey();
                 T newModel = dataSnapshot.getValue(Donepurchaseadapter.this.mModelClass);
-                DonateBookInfo orderClass=(DonateBookInfo) newModel;
+                PurchaseInfo orderClass=(PurchaseInfo) newModel;
 
                 if(orderClass.getEmail().equals(NavActivity.email)&&orderClass.getStatus().equals("DONE")) {
                     int index = mKeys.indexOf(key);
@@ -176,7 +177,7 @@ public class Donepurchaseadapter<T> extends BaseAdapter {
                 // A model was removed from the list. Remove it from our list and the name mapping
                 String key = dataSnapshot.getKey();
                 //Log.e("valueofkey",String.valueOf(key));
-                DonateBookInfo orderClass=dataSnapshot.getValue(DonateBookInfo.class);
+                PurchaseInfo orderClass=dataSnapshot.getValue(PurchaseInfo.class);
                 if(orderClass.getEmail().equals(NavActivity.email)&&orderClass.getStatus().equals("DONE")) {
                     int index = mKeys.indexOf(key);
                     Log.e("size",String.valueOf(mKeys.size()));
@@ -271,7 +272,7 @@ public class Donepurchaseadapter<T> extends BaseAdapter {
         String driver,client,pdate,ptime;
         int status;
         long ordern;
-        DonateBookInfo order=(DonateBookInfo) model;
+        PurchaseInfo order=(PurchaseInfo) model;
 
         //manager=order.getmanager();
 
@@ -286,7 +287,7 @@ public class Donepurchaseadapter<T> extends BaseAdapter {
 
         t1.setText(order.getBookname());
         t2.setText(order.getAuthor());
-        t3.setText(order.getAddress());
+        t3.setText(order.getMrp());
 
     }
     public String getstring(EditText s) {

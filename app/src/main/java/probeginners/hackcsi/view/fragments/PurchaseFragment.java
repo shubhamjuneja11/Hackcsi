@@ -1,9 +1,7 @@
 package probeginners.hackcsi.view.fragments;
 
 
-import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -38,8 +36,6 @@ import probeginners.hackcsi.Models.BooksVol;
 import probeginners.hackcsi.Models.Items;
 import probeginners.hackcsi.NavActivity;
 import probeginners.hackcsi.R;
-import probeginners.hackcsi.controller.ItemClickListener;
-import probeginners.hackcsi.view.activities.ChatActivity;
 
 import static android.content.ContentValues.TAG;
 
@@ -89,7 +85,60 @@ public class PurchaseFragment extends Fragment implements View.OnClickListener{
             });
 
 
+      rv.addOnItemTouchListener(new RecyclerTouchListener(getContext(), rv, new ClickListener() {
+          @Override
+          public void onClick(View view, int position) {
+              Log.e("abcd","ff");
 
+             name=items.get(position).getVolumeInfo().getTitle();
+              author=items.get(position).getVolumeInfo().getAuthors().get(0);
+              mrp=String.valueOf(400);
+              int points=Integer.valueOf(mrp);
+              int p = Integer.valueOf(points);
+              /*if (p < NavActivity.points)
+                  Toast.makeText(getContext(), "You dont have sufficient points", Toast.LENGTH_SHORT).show();*/
+              final AlertDialog.Builder alertDialog = new AlertDialog.Builder(getContext());
+
+              /*name=((TextView)rv.findViewById(R.id.b_name)).getText().toString();
+              author=((TextView)rv.findViewById(R.id.b_author)).getText().toString();
+              mrp=((TextView)rv.findViewById(R.id.b_mrp)).getText().toString();*/
+              alertDialog.setTitle("Confirm Purchase");
+
+              // Setting Dialog Message
+              alertDialog.setMessage("Click Ok to purchase the book?");
+
+              // Setting Icon to Dialog
+
+
+              // Setting Positive "Yes" Button
+              alertDialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                  public void onClick(DialogInterface dialog,int which) {
+
+                      // Write your code here to invoke YES event
+                      Toast.makeText(getContext().getApplicationContext(), "Purchased", Toast.LENGTH_SHORT).show();
+                      f.push().setValue(new PurchaseInfo(name,author,mrp,NavActivity.email,"PENDING"));
+                  }
+              });
+
+              // Setting Negative "NO" Button
+              alertDialog.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                  public void onClick(DialogInterface dialog,	int which) {
+                      // Write your code here to invoke NO event
+                    /*Toast.makeText(getContext().getApplicationContext(), "You clicked on NO", Toast.LENGTH_SHORT).show();
+                    dialog.cancel();*/
+                  }
+              });
+
+              // Showing Alert Message
+              alertDialog.show();
+
+          }
+
+          @Override
+          public void onLongClick(View view, int position) {
+
+          }
+      }));
 
         return v;
     }
@@ -131,7 +180,7 @@ public class PurchaseFragment extends Fragment implements View.OnClickListener{
 
                 // Write your code here to invoke YES event
                 Toast.makeText(getContext().getApplicationContext(), "Purchased", Toast.LENGTH_SHORT).show();
-                f.push().setValue(new PurchaseInfo(name,author,mrp));
+                f.push().setValue(new PurchaseInfo(name,author,mrp,NavActivity.email,"PENDING"));
             }
         });
 
@@ -204,7 +253,6 @@ public class PurchaseFragment extends Fragment implements View.OnClickListener{
             Log.d(TAG, "onPostExecute: " + bv.getTotalItems());
             Log.d(TAG, "onPostExecute: " + bv.getItems().get(1).getVolumeInfo().getPageCount());
            // Log.d(TAG, "onPostExecute: "+bv.getItems().get(0).getSaleInfo().getRetailPrice().getAmount());
-            Log.d(TAG, "onPostExecute: "+bv.getItems().get(3).getVolumeInfo().getImageLinks().getThumbnail());
 
             rv.setLayoutManager(new LinearLayoutManager(getActivity()));
             Adapter adapter = new Adapter();
@@ -216,10 +264,8 @@ public class PurchaseFragment extends Fragment implements View.OnClickListener{
 
         class Holder extends RecyclerView.ViewHolder {
 
-            Context context;
             ImageView imgView;
             TextView tvTitle, tvDescription, tvAuthors, tvPageCount, tvGenres, tvSaleability, tvMRP, tvCountry, tvPublisher;
-            ItemClickListener clickListener;
 
             public Holder(View v) {
                 super(v);
@@ -233,29 +279,10 @@ public class PurchaseFragment extends Fragment implements View.OnClickListener{
                 tvMRP = (TextView) v.findViewById(R.id.mrp);
                 tvCountry = (TextView) v.findViewById(R.id.country);
                 tvPublisher = (TextView) v.findViewById(R.id.publisher);
-                context = v.getContext();
             }
-
-
-
-
-            public void intent(String word, String meaning){
-                Intent i = new Intent(context, ChatActivity.class);
-                context.startActivity(i);
-            }
-
-
-            public void setClickListener(ItemClickListener itemClickListener) {
-                this.clickListener = itemClickListener;
-            }
-
-
         }
 
         class Adapter extends RecyclerView.Adapter<Holder> {
-
-            String title, desc;
-            Context context;
 
             @Override
             public int getItemViewType(int position) {
@@ -267,16 +294,14 @@ public class PurchaseFragment extends Fragment implements View.OnClickListener{
                 LayoutInflater li = getActivity().getLayoutInflater();
                 View itemView = li.inflate(R.layout.recycler_layout, parent, false);
                 itemView.setOnClickListener(PurchaseFragment.this);
-                context = itemView.getContext();
+                Log.e("abcd","ji");
                 return new Holder(itemView);
             }
 
             @Override
             public void onBindViewHolder(final Holder holder, int position) {
 
-                items = bv.getItems();
-                title = items.get(position).getVolumeInfo().getTitle();
-                desc = items.get(position).getVolumeInfo().getDescription();
+                 items = bv.getItems();
 
                 if(items.get(position).getVolumeInfo().getAuthors()!=null){
                     holder.tvAuthors.setText(items.get(position).getVolumeInfo().getAuthors().get(0));
@@ -298,24 +323,6 @@ public class PurchaseFragment extends Fragment implements View.OnClickListener{
                 }
                 Glide.with(getActivity()).load(url).centerCrop().into(holder.imgView);
                 holder.tvPublisher.setText(items.get(position).getVolumeInfo().getPublisher());
-                if(items.get(position).getVolumeInfo().getCategories()!=null) {
-                    holder.tvGenres.setText(items.get(position).getVolumeInfo().getCategories().get(0));
-                }else{
-
-                }
-
-                holder.setClickListener(new ItemClickListener() {
-                    @Override
-                    public void onClick(View view, int position, boolean isLongClick) {
-                        if (isLongClick) {
-                            holder.intent("robin", "dd");
-                            Toast.makeText(context, items.get(position).getVolumeInfo().getTitle() + " (Long click)", Toast.LENGTH_SHORT).show();
-                        } else {
-                            holder.intent("robin", "dd");
-                            Toast.makeText(context, items.get(position).getVolumeInfo().getDescription() , Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
 
             }
 
@@ -324,8 +331,5 @@ public class PurchaseFragment extends Fragment implements View.OnClickListener{
                 return bv.getItems().size();
             }
         }
-    }
-    double getPoints(double mrp){
-        return (1.0)*mrp/10;
     }
 }

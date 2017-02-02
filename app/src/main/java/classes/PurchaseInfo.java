@@ -8,12 +8,36 @@ public class PurchaseInfo {
     String bookname;
     String author;
     String mrp;
-    public PurchaseInfo(String bookname, String author, String mrp) {
+    String email;
+    String status;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public PurchaseInfo(String bookname, String author, String mrp, String email, String status) {
+
         this.bookname = bookname;
         this.author = author;
         this.mrp = mrp;
+        this.email = email;
+        this.status = status;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+
+    public PurchaseInfo(){}
     public String getBookname() {
 
         return bookname;
