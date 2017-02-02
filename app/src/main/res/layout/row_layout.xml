@@ -1,136 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:columnCount="2"
-    android:rowCount="7">
+    <android.support.v7.widget.CardView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+    app:cardElevation="5sp"
+    android:layout_margin="8sp"
+    android:padding="4sp"
+    app:cardCornerRadius="3sp">
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:layout_rowSpan="1"
-        android:layout_columnWeight="1"
-        android:text="Book Name"
-        android:textColor="#000"
-        android:layout_gravity="left|top"
-        android:textSize="20sp"
-        android:padding="4sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/one"
+            android:text="Book Name"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:padding="4sp"/>
 
-    <TextView
-        android:layout_rowSpan="1"
-        android:layout_columnWeight="1"
-        android:layout_gravity="right|top"
-        android:text="Angels"
-        android:padding="4sp"
-        android:textSize="20sp"
-        android:id="@+id/b_name"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/one"
+            android:text="Angels"
+            android:padding="4sp"
+            android:textSize="20sp"
+            android:id="@+id/b_name"/>
 
-    <TextView
-        android:layout_rowSpan="1"
-        android:layout_columnWeight="1"
-        android:text="Book Year"
-        android:textColor="#000"
-        android:layout_gravity="left|top"
-        android:textSize="20sp"
-        android:padding="4sp"/>
+        <TextView
+            android:layout_below="@+id/one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/two"
+            android:text="Book Year"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:padding="4sp"/>
 
-    <TextView
-        android:layout_rowSpan="1"
-        android:layout_columnWeight="1"
-        android:layout_gravity="right|top"
-        android:text="2011"
-        android:padding="4sp"
-        android:textSize="20sp"
-        android:id="@+id/b_year"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/two"
+            android:layout_below="@+id/b_name"
+            android:text="2011"
+            android:padding="4sp"
+            android:textSize="20sp"
+            android:id="@+id/b_year"/>
 
-    <TextView
-        android:layout_rowSpan="1"
-        android:layout_columnWeight="1"
-        android:text="Book Author"
-        android:textColor="#000"
-        android:layout_gravity="left|top"
-        android:textSize="20sp"
-        android:padding="4sp"/>
+        <TextView
+            android:layout_below="@+id/two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/three"
+            android:text="Book Author"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:padding="4sp"/>
 
-    <TextView
-        android:layout_rowSpan="1"
-        android:layout_columnWeight="1"
-        android:layout_gravity="right|top"
-        android:text="Book Merian Angels"
-        android:padding="4sp"
-        android:textSize="20sp"
-        android:id="@+id/b_author"/>
+        <TextView
+            android:layout_below="@+id/b_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/three"
+            android:text="Book Merian Angels"
+            android:padding="4sp"
+            android:textSize="20sp"
+            android:id="@+id/b_author"/>
 
-    <TextView
-        android:layout_rowSpan="1"
-        android:layout_columnWeight="1"
-        android:text="Book M.R.P."
-        android:textColor="#000"
-        android:layout_gravity="left|top"
-        android:textSize="20sp"
-        android:padding="4sp"/>
+        <TextView
+            android:layout_below="@+id/three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/four"
+            android:text="Book M.R.P."
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:padding="4sp"/>
 
-    <TextView
-        android:layout_rowSpan="1"
-        android:layout_columnWeight="1"
-        android:layout_gravity="right|top"
-        android:text="INR 150"
-        android:padding="4sp"
-        android:textSize="20sp"
-        android:id="@+id/b_mrp"/>
+        <TextView
+            android:layout_below="@+id/b_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/four"
+            android:text="INR 150"
+            android:padding="4sp"
+            android:textSize="20sp"
+            android:id="@+id/b_mrp"/>
 
-    <TextView
-        android:layout_rowSpan="1"
-        android:layout_columnWeight="1"
-        android:text="Your Name"
-        android:textColor="#000"
-        android:layout_gravity="left|top"
-        android:textSize="20sp"
-        android:padding="4sp"/>
+        <TextView
+            android:layout_below="@+id/four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/five"
+            android:text="Your Name"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:padding="4sp"/>
 
-    <TextView
-        android:layout_rowSpan="1"
-        android:layout_columnWeight="1"
-        android:layout_gravity="right|top"
-        android:text="Ravi Prakash"
-        android:padding="4sp"
-        android:textSize="20sp"
-        android:id="@+id/y_name"/>
+        <TextView
+            android:layout_below="@+id/b_mrp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/five"
+            android:text="Ravi Prakash"
+            android:padding="4sp"
+            android:textSize="20sp"
+            android:id="@+id/y_name"/>
 
-    <TextView
-        android:layout_rowSpan="1"
-        android:layout_columnWeight="1"
-        android:text="Your Address"
-        android:textColor="#000"
-        android:layout_gravity="left|top"
-        android:textSize="20sp"
-        android:padding="4sp"/>
+        <TextView
+            android:layout_below="@+id/five"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/six"
+            android:text="Your Address"
+            android:textColor="#000"
+            android:layout_gravity="left|top"
+            android:textSize="20sp"
+            android:padding="4sp"/>
 
-    <TextView
-        android:layout_rowSpan="1"
-        android:layout_columnWeight="1"
-        android:layout_gravity="right|top"
-        android:text="ABC, DEF Nagar, New Delhi- 110065"
-        android:padding="4sp"
-        android:textSize="20sp"
-        android:id="@+id/y_address"/>
+        <TextView
+            android:layout_below="@+id/y_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/six"
+            android:text="Address Goes Here"
+            android:padding="4sp"
+            android:textSize="20sp"
+            android:id="@+id/y_address"/>
 
-    <TextView
-        android:layout_rowSpan="1"
-        android:layout_columnWeight="1"
-        android:text="Your Phone Number"
-        android:textColor="#000"
-        android:layout_gravity="left|top"
-        android:textSize="20sp"
-        android:padding="4sp"/>
+        <TextView
+            android:layout_below="@+id/six"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/seven"
+            android:text="Your Phone Number"
+            android:textColor="#000"
+            android:layout_gravity="left|top"
+            android:textSize="20sp"
+            android:padding="4sp"/>
 
-    <TextView
-        android:layout_rowSpan="1"
-        android:layout_columnWeight="1"
-        android:layout_gravity="right|top"
-        android:text="7042337414"
-        android:padding="4sp"
-        android:textSize="20sp"
-        android:id="@+id/y_phone"/>
+        <TextView
+            android:layout_below="@+id/y_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/seven"
+            android:text="7042337414"
+            android:padding="4sp"
+            android:textSize="20sp"
+            android:id="@+id/y_phone"/>
 
-</GridLayout>
+    </RelativeLayout>
+    </android.support.v7.widget.CardView>
