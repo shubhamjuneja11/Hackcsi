@@ -9,8 +9,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/DONATE"
-        android:text="DONATE"
+        android:id="@+id/DONATED"
+        android:text="DONATED"
         android:textColor="#FFF"
         android:fontFamily="casual"
         android:padding="15sp"

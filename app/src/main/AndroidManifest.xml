@@ -20,7 +20,9 @@
         </activity>
         <activity android:name=".Signupactivity" />
         <activity android:name=".SigninActivity" />
-        <activity android:name=".ForgetPasswordActivity"></activity>
+        <activity android:name=".ForgetPasswordActivity" />
+        <activity android:name=".DonatedActivity" />
+        <activity android:name=".PurchasedActivity"></activity>
     </application>
 
 </manifest>

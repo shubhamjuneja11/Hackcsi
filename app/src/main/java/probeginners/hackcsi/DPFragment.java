@@ -1,6 +1,7 @@
 package probeginners.hackcsi;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -14,7 +15,7 @@ import android.widget.Button;
  */
 public class DPFragment extends Fragment {
 
-    Button DONATE, PURCHASE;
+    Button DONATED, PURCHASE;
 
     public DPFragment() {
         // Required empty public constructor
@@ -27,13 +28,14 @@ public class DPFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_d, container, false);
 
-        DONATE = (Button) v.findViewById(R.id.DONATE);
+        DONATED = (Button) v.findViewById(R.id.DONATED);
         PURCHASE = (Button) v.findViewById(R.id.PURCHASE);
 
-        DONATE.setOnClickListener(new View.OnClickListener() {
+        DONATED.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent i = new Intent(getActivity(), DonatedActivity.class);
+                getActivity().startActivity(i);
             }
         });
 
