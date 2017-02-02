@@ -1,7 +1,9 @@
 package probeginners.hackcsi.view.fragments;
 
 
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -36,6 +38,8 @@ import probeginners.hackcsi.Models.BooksVol;
 import probeginners.hackcsi.Models.Items;
 import probeginners.hackcsi.NavActivity;
 import probeginners.hackcsi.R;
+import probeginners.hackcsi.controller.ItemClickListener;
+import probeginners.hackcsi.view.activities.ChatActivity;
 
 import static android.content.ContentValues.TAG;
 
@@ -212,8 +216,10 @@ public class PurchaseFragment extends Fragment implements View.OnClickListener{
 
         class Holder extends RecyclerView.ViewHolder {
 
+            Context context;
             ImageView imgView;
             TextView tvTitle, tvDescription, tvAuthors, tvPageCount, tvGenres, tvSaleability, tvMRP, tvCountry, tvPublisher;
+            ItemClickListener clickListener;
 
             public Holder(View v) {
                 super(v);
@@ -227,10 +233,29 @@ public class PurchaseFragment extends Fragment implements View.OnClickListener{
                 tvMRP = (TextView) v.findViewById(R.id.mrp);
                 tvCountry = (TextView) v.findViewById(R.id.country);
                 tvPublisher = (TextView) v.findViewById(R.id.publisher);
+                context = v.getContext();
             }
+
+
+
+
+            public void intent(String word, String meaning){
+                Intent i = new Intent(context, ChatActivity.class);
+                context.startActivity(i);
+            }
+
+
+            public void setClickListener(ItemClickListener itemClickListener) {
+                this.clickListener = itemClickListener;
+            }
+
+
         }
 
         class Adapter extends RecyclerView.Adapter<Holder> {
+
+            String title, desc;
+            Context context;
 
             @Override
             public int getItemViewType(int position) {
@@ -242,13 +267,16 @@ public class PurchaseFragment extends Fragment implements View.OnClickListener{
                 LayoutInflater li = getActivity().getLayoutInflater();
                 View itemView = li.inflate(R.layout.recycler_layout, parent, false);
                 itemView.setOnClickListener(PurchaseFragment.this);
+                context = itemView.getContext();
                 return new Holder(itemView);
             }
 
             @Override
             public void onBindViewHolder(final Holder holder, int position) {
 
-                 items = bv.getItems();
+                items = bv.getItems();
+                title = items.get(position).getVolumeInfo().getTitle();
+                desc = items.get(position).getVolumeInfo().getDescription();
 
                 if(items.get(position).getVolumeInfo().getAuthors()!=null){
                     holder.tvAuthors.setText(items.get(position).getVolumeInfo().getAuthors().get(0));
@@ -275,6 +303,19 @@ public class PurchaseFragment extends Fragment implements View.OnClickListener{
                 }else{
 
                 }
+
+                holder.setClickListener(new ItemClickListener() {
+                    @Override
+                    public void onClick(View view, int position, boolean isLongClick) {
+                        if (isLongClick) {
+                            holder.intent("robin", "dd");
+                            Toast.makeText(context, items.get(position).getVolumeInfo().getTitle() + " (Long click)", Toast.LENGTH_SHORT).show();
+                        } else {
+                            holder.intent("robin", "dd");
+                            Toast.makeText(context, items.get(position).getVolumeInfo().getDescription() , Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
 
             }
 

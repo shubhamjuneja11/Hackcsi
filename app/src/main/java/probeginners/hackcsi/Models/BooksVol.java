@@ -7,8 +7,8 @@ import java.util.ArrayList;
  */
 
 public class BooksVol {
-    String kind;
-    int totalItems;
+    public String kind;
+    public int totalItems;
     ArrayList<Items> items;
 
     public ArrayList<Items> getItems() {
