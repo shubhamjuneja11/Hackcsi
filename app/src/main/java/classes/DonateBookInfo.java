@@ -1,11 +1,38 @@
 package classes;
 
+import probeginners.hackcsi.NavActivity;
+
 /**
  * Created by junejaspc on 2/2/17.
  */
 
 public class DonateBookInfo {
-    String bookname,author,address,name,mobile,mrp,year;
+    public String bookname;
+    public String author;
+    public String address;
+    public String name;
+    public String mobile;
+    public String mrp;
+    public String year;
+    public String email;
+    public String status;
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+
 
     public String getBookname() {
         return bookname;
@@ -63,7 +90,7 @@ public class DonateBookInfo {
         this.year = year;
     }
 
-    public DonateBookInfo(String year, String bookname, String author, String address, String name, String mobile, String mrp) {
+    public DonateBookInfo(String year, String bookname, String author, String address, String name, String mobile, String mrp,String status) {
 
         this.year = year;
         this.bookname = bookname;
@@ -72,7 +99,10 @@ public class DonateBookInfo {
         this.name = name;
         this.mobile = mobile;
         this.mrp = mrp;
+        this.email= NavActivity.email;
+        this.status=status;
     }
+    public DonateBookInfo(){}
 }
 
 

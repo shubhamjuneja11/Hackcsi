@@ -8,23 +8,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.firebase.client.Firebase;
 
 import classes.DonateBookInfo;
 import probeginners.hackcsi.Constants;
+import probeginners.hackcsi.Models.DoneDonateAdapter;
 import probeginners.hackcsi.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class DonateFragment extends Fragment {
 
+public class DonateFragment extends Fragment {
     DonateBookInfo data;
     Firebase firebase;
     EditText b_name, b_author, b_mrp, b_year, y_name, y_address, y_phone;
     Button button;
+    Firebase f;
     public DonateFragment() {
         // Required empty public constructor
     }
@@ -33,10 +33,13 @@ public class DonateFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_donate, container, false);
-        button=(Button)v.findViewById(R.id.button);
         Constants.fun();
+        // Inflate the layout for this fragment
+        f=new Firebase(Constants.requests);
+        View v = inflater.inflate(R.layout.fragment_donate, container, false);
+
+
+        button=(Button)v.findViewById(R.id.button);
         firebase = new Firebase(Constants.requests);
         b_name = (EditText) v.findViewById(R.id.b_name);
         b_author = (EditText) v.findViewById(R.id.b_author);
@@ -51,12 +54,13 @@ public class DonateFragment extends Fragment {
                 donate(view);
             }
         });
+
         return v;
     }
 
     public void donate(View view) {
         data = new DonateBookInfo(getstring(b_year), getstring(b_name), getstring(b_author), getstring(y_address),
-                getstring(b_name), getstring(y_phone), getstring(b_mrp));
+                getstring(b_name), getstring(y_phone), getstring(b_mrp),"PENDING");
         firebase.push().setValue(data);
 
         Toast.makeText(getContext(), "Submitted successfully", Toast.LENGTH_SHORT).show();

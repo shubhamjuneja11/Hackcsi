@@ -22,7 +22,7 @@ import probeginners.hackcsi.view.fragments.PurchaseFragment;
 public class NavActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-
+public static String email="a@gmail-1-com";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
