@@ -1,5 +1,6 @@
 package probeginners.hackcsi;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,6 +15,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import probeginners.hackcsi.view.fragments.DPFragment;
+import probeginners.hackcsi.view.fragments.DonateFragment;
+import probeginners.hackcsi.view.fragments.PurchaseFragment;
 
 public class NavActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -90,15 +93,26 @@ public class NavActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_dp) {
-            // Handle the camera action
+            DPFragment fragment=new DPFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
         } else if (id == R.id.nav_donate) {
-
-        } else if (id == R.id.nav_donated) {
-
+            DonateFragment fragment=new DonateFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
         } else if (id == R.id.nav_purchase) {
-
+            PurchaseFragment fragment=new PurchaseFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
+        } else if (id == R.id.nav_donated) {
+            Intent i = new Intent(this, PurchasedActivity.class);
+            startActivity(i);
         } else if (id == R.id.nav_purchased) {
-
+            Intent i = new Intent(this, PurchasedActivity.class);
+            startActivity(i);
         } else if (id == R.id.nav_send) {
 
         }
