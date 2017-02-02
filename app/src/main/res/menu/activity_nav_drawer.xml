@@ -5,19 +5,23 @@
         <item
             android:id="@+id/nav_dp"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Donate/Purchase" />
+            android:title="Main" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_donate"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:title="Donate" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_purchase"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:title="Purchase" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_donated"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:title="Donated" />
+        <item
+            android:id="@+id/nav_purchased"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Purchased" />
     </group>
 
     <item android:title="Communicate">

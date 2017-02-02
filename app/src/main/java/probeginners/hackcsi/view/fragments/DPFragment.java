@@ -1,4 +1,4 @@
-package probeginners.hackcsi;
+package probeginners.hackcsi.view.fragments;
 
 
 import android.content.Intent;
@@ -8,6 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import probeginners.hackcsi.DonatedActivity;
+import probeginners.hackcsi.PurchasedActivity;
+import probeginners.hackcsi.R;
 
 
 /**
@@ -42,7 +46,8 @@ public class DPFragment extends Fragment {
         PURCHASE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent i = new Intent(getActivity(), PurchasedActivity.class);
+                getActivity().startActivity(i);
             }
         });
 
