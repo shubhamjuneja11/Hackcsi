@@ -1,4 +1,4 @@
-package probeginners.hackcsi.view;
+package probeginners.hackcsi.view.activities;
 
 import android.content.Intent;
 import android.os.Handler;

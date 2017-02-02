@@ -33,7 +33,9 @@ import java.util.ArrayList;
 import classes.PurchaseInfo;
 import probeginners.hackcsi.Constants;
 import probeginners.hackcsi.Models.BooksVol;
+import probeginners.hackcsi.Models.ClickListener;
 import probeginners.hackcsi.Models.Items;
+import probeginners.hackcsi.Models.RecyclerTouchListener;
 import probeginners.hackcsi.NavActivity;
 import probeginners.hackcsi.R;
 
@@ -305,12 +307,17 @@ public class PurchaseFragment extends Fragment implements View.OnClickListener{
 
                 if(items.get(position).getVolumeInfo().getAuthors()!=null){
                     holder.tvAuthors.setText(items.get(position).getVolumeInfo().getAuthors().get(0));
-                }else
+                }else{
+
+                }
+                if(items.get(position).getVolumeInfo().getCategories()!=null){
+                    holder.tvAuthors.setText(items.get(position).getVolumeInfo().getCategories().get(0));
+                }else{
+
+                }
                 holder.tvDescription.setText(items.get(position).getVolumeInfo().getDescription());
                 holder.tvPageCount.setText(String.valueOf(items.get(position).getVolumeInfo().getPageCount()));
-                if(items.get(position).getSaleInfo().getSaleability()=="FOR_SALE"){
-                holder.tvMRP.setText(String.valueOf(items.get(position).getSaleInfo().getRetailPrice().getAmount()) + " INR");
-                }
+                holder.tvMRP.setText(400 + " INR");
                 holder.tvCountry.setText(items.get(position).getAccessInfo().getCountry());
                 holder.tvSaleability.setText(items.get(position).getSaleInfo().getSaleability());
                 holder.tvTitle.setText(items.get(position).getVolumeInfo().getTitle());
