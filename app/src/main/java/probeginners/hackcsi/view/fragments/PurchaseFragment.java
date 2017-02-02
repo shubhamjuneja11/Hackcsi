@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -39,6 +41,8 @@ public class PurchaseFragment extends Fragment {
     String API_KEY = "AIzaSyDsHdOSEaViNIqMuzrAeDISzDN9cVvZBe8";
     BooksVol bv;
     RecyclerView rv;
+    EditText search;
+    Button btnSearch;
 
 
     public PurchaseFragment() {
@@ -50,18 +54,28 @@ public class PurchaseFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_purchase, container, false);
+        search = (EditText) v.findViewById(R.id.search);
+        btnSearch = (Button) v.findViewById(R.id.btnsearch);
 
 
         rv = (RecyclerView) v.findViewById(R.id.rv);
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(search.getText()!=null){
 
-        getInfo();
+                    getInfo(search.getText().toString());
+                }
+            }
+        });
 
 
         return v;
     }
 
-    private void getInfo() {
-        String myurl = "https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=" + API_KEY;
+    private void getInfo(String cat) {
+        String myurl = "https://www.googleapis.com/books/v1/volumes?q="+cat+"&key=" + API_KEY;
+        //flowers+inauthor:keyes
         //Log.d(TAG, "getTrainInfo: "+myurl);
         new loadUrlDataTask().execute(myurl);
     }
@@ -120,6 +134,7 @@ public class PurchaseFragment extends Fragment {
             Log.d(TAG, "onPostExecute: " + bv.getTotalItems());
             Log.d(TAG, "onPostExecute: " + bv.getItems().get(1).getVolumeInfo().getPageCount());
            // Log.d(TAG, "onPostExecute: "+bv.getItems().get(0).getSaleInfo().getRetailPrice().getAmount());
+            Log.d(TAG, "onPostExecute: "+bv.getItems().get(3).getVolumeInfo().getImageLinks().getThumbnail());
 
             rv.setLayoutManager(new LinearLayoutManager(getActivity()));
             Adapter adapter = new Adapter();
@@ -169,10 +184,14 @@ public class PurchaseFragment extends Fragment {
 
                 ArrayList<Items> items = bv.getItems();
 
-                holder.tvAuthors.setText(items.get(position).getVolumeInfo().getAuthors().get(0));
+                if(items.get(position).getVolumeInfo().getAuthors()!=null){
+                    holder.tvAuthors.setText(items.get(position).getVolumeInfo().getAuthors().get(0));
+                }else
                 holder.tvDescription.setText(items.get(position).getVolumeInfo().getDescription());
                 holder.tvPageCount.setText(String.valueOf(items.get(position).getVolumeInfo().getPageCount()));
-               // holder.tvMRP.setText(items.get(position).getSaleInfo().getRetailPrice().getAmount().toString() + " INR");
+                if(items.get(position).getSaleInfo().getSaleability()=="FOR_SALE"){
+                holder.tvMRP.setText(String.valueOf(items.get(position).getSaleInfo().getRetailPrice().getAmount()) + " INR");
+                }
                 holder.tvCountry.setText(items.get(position).getAccessInfo().getCountry());
                 holder.tvSaleability.setText(items.get(position).getSaleInfo().getSaleability());
                 holder.tvTitle.setText(items.get(position).getVolumeInfo().getTitle());
@@ -193,5 +212,8 @@ public class PurchaseFragment extends Fragment {
                 return bv.getItems().size();
             }
         }
+    }
+    double getPoints(double mrp){
+        return (1.0)*mrp/10;
     }
 }

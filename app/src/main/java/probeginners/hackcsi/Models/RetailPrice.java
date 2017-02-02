@@ -5,10 +5,10 @@ package probeginners.hackcsi.Models;
  */
 
 public class RetailPrice {
-    float amount;
+    double amount;
     String currencyCode;
 
-    public float getAmount() {
+    public double getAmount() {
         return amount;
     }
 

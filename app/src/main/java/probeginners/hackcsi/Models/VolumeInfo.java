@@ -13,7 +13,7 @@ public class VolumeInfo {
 //    String publishedDate;
     String description;
    int pageCount;
-//    ArrayList<String> categories;
+   ArrayList<String> categories;
     float averageRating;
     int ratingsCount;
 //    String maturityRating;
@@ -47,9 +47,9 @@ public class VolumeInfo {
         return pageCount;
     }
 //
-//    public ArrayList<String> getCategories() {
-//        return categories;
-//    }
+    public ArrayList<String> getCategories() {
+        return categories;
+    }
 ////
     public float getAverageRating() {
         return averageRating;
