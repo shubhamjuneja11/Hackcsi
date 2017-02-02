@@ -26,7 +26,8 @@ public class Signupactivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         Constants.fun();
         //Firebase.setAndroidContext(this);
-        reg=new Firebase("https://chat-6c23a.firebaseio.com/registered_users");
+        //reg=new Firebase("https://chat-6c23a.firebaseio.com/registered_users");
+        reg=new Firebase(Constants.registered_users);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signupactivity);
         ema=(EditText)findViewById(R.id.emailsu);
@@ -70,7 +71,7 @@ public class Signupactivity extends AppCompatActivity {
                             // the auth state listener will be notified and logic to handle the
                             // signed in user can be handled in the listener.
                             if (!task.isSuccessful()) {
-                                Toast.makeText(Signupactivity.this, "Signup Failed",
+                                Toast.makeText(Signupactivity.this, task.getException().toString(),
                                         Toast.LENGTH_SHORT).show();
                             } /*HashMap<String,Object> hashMap=new HashMap<String, Object>();
                                 hashMap.put(email,email);

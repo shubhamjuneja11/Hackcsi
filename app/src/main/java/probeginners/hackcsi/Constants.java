@@ -8,7 +8,8 @@ public class Constants {
     public static String registered_users,from;
 
     public static void fun(){
-
+        registered_users="https://appathon-bafab.firebaseio.com/registered";
+        from="https://appathon-bafab.firebaseio.com/";
     }
     public static String convert1(String a)
     {

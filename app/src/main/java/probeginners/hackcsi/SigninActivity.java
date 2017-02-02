@@ -113,10 +113,10 @@ public class SigninActivity extends AppCompatActivity {
                                     SharedPreferences.Editor editor = sharedPreferences.edit();
                                     editor.putString("email", myemail);
                                     editor.commit();
-                                    /*Intent intent = new Intent(SigninActivity.this, ManagerPanelActivity.class);
+                                    Intent intent = new Intent(SigninActivity.this, NavActivity.class);
                                     intent.putExtra("FROM_USER", email);
                                     startActivity(intent);
-                                    finish();*/
+                                    finish();
                                 }
 
                                 // ...
