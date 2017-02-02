@@ -178,7 +178,7 @@ public class PurchaseFragment extends Fragment {
                 holder.tvTitle.setText(items.get(position).getVolumeInfo().getTitle());
 
                 String url;
-                if(items.get(position).getVolumeInfo().getImageLinks().getThumbnail()==null){
+                if(items.get(position).getVolumeInfo().getImageLinks()==null){
                     url = "https://d13yacurqjgara.cloudfront.net/users/39185/screenshots/3259335/rabbit_1x.jpg";
                 }else{
                     url = items.get(position).getVolumeInfo().getImageLinks().getThumbnail();
