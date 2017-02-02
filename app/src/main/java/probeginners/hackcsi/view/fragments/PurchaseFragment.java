@@ -319,7 +319,7 @@ public class PurchaseFragment extends Fragment implements View.OnClickListener{
                 holder.tvPageCount.setText(String.valueOf(items.get(position).getVolumeInfo().getPageCount()));
                 holder.tvMRP.setText(400 + " INR");
                 holder.tvCountry.setText(items.get(position).getAccessInfo().getCountry());
-                holder.tvSaleability.setText(items.get(position).getSaleInfo().getSaleability());
+                holder.tvSaleability.setText("FOR SALE");
                 holder.tvTitle.setText(items.get(position).getVolumeInfo().getTitle());
 
                 String url;
