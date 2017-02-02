@@ -18,6 +18,7 @@ import probeginners.hackcsi.view.fragments.DPFragment;
 import probeginners.hackcsi.view.fragments.DonateFragment;
 import probeginners.hackcsi.view.fragments.PurchaseFragment;
 
+
 public class NavActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -25,6 +26,7 @@ public class NavActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_nav);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

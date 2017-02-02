@@ -11,7 +11,7 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView"/>
+            android:id="@+id/imgView1"/>
         <TextView
             android:paddingLeft="10dp"
             android:layout_width="match_parent"
@@ -19,17 +19,17 @@
             android:layout_height="wrap_content"
             android:textStyle="normal|bold"
             android:textSize="20sp"
-            android:id="@+id/title"
+            android:id="@+id/title1"
             android:textAlignment="center" />
         <TextView
             android:paddingLeft="10dp"
             android:layout_width="match_parent"
             android:textColor="@android:color/holo_red_dark"
             android:layout_height="wrap_content"
-            android:textStyle="normal|bold"
             android:textSize="16dp"
             android:id="@+id/description"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textStyle="normal|italic" />
 
         <LinearLayout
             android:layout_width="match_parent"

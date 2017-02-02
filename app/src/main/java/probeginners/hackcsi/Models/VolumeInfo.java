@@ -11,7 +11,7 @@ public class VolumeInfo {
     ArrayList<String> authors;
     String publisher;
 //    String publishedDate;
-//    String description;
+    String description;
    int pageCount;
 //    ArrayList<String> categories;
     float averageRating;
@@ -39,9 +39,9 @@ public class VolumeInfo {
 //        return publishedDate;
 //    }
 //
-//    public String getDescription() {
-//        return description;
-//    }
+    public String getDescription() {
+        return description;
+    }
 //
     public int getPageCount() {
         return pageCount;

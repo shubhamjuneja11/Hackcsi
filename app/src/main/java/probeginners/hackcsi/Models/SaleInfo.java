@@ -7,7 +7,7 @@ package probeginners.hackcsi.Models;
 public class SaleInfo {
     String saleability;
 //    ListPrice listPrice;
-//    RetailPrice retailPrice;
+    RetailPrice retailPrice;
 //    String buyLink;
 
     public String getSaleability() {
@@ -18,9 +18,9 @@ public class SaleInfo {
 //        return listPrice;
 //    }
 //
-//    public RetailPrice getRetailPrice() {
-//        return retailPrice;
-//    }
+    public RetailPrice getRetailPrice() {
+        return retailPrice;
+    }
 //
 //    public String getBuyLink() {
 //        return buyLink;
