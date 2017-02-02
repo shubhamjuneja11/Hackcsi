@@ -13,6 +13,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import probeginners.hackcsi.view.fragments.DPFragment;
+
 public class NavActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -89,13 +91,13 @@ public class NavActivity extends AppCompatActivity
 
         if (id == R.id.nav_dp) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_donate) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_donated) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_purchase) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_purchased) {
 
         } else if (id == R.id.nav_send) {
 
