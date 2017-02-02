@@ -1,14 +1,16 @@
 package probeginners.hackcsi.Models;
 
+import java.math.BigDecimal;
+
 /**
  * Created by rishabhshukla on 02/02/17.
  */
 
 public class RetailPrice {
-    double amount;
+    BigDecimal amount;
     String currencyCode;
 
-    public double getAmount() {
+    public BigDecimal getAmount() {
         return amount;
     }
 

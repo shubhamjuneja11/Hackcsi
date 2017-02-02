@@ -13,6 +13,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".NavActivity"
+            android:windowSoftInputMode="adjustNothing"
             android:label="@string/title_activity_nav"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

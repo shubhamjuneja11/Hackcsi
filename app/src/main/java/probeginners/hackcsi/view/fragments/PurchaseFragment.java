@@ -76,6 +76,8 @@ public class PurchaseFragment extends Fragment {
     private void getInfo(String cat) {
         String myurl = "https://www.googleapis.com/books/v1/volumes?q="+cat+"&key=" + API_KEY;
         //flowers+inauthor:keyes
+
+       // String url2 = "https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key="+API_KEY;
         //Log.d(TAG, "getTrainInfo: "+myurl);
         new loadUrlDataTask().execute(myurl);
     }
@@ -134,7 +136,7 @@ public class PurchaseFragment extends Fragment {
             Log.d(TAG, "onPostExecute: " + bv.getTotalItems());
             Log.d(TAG, "onPostExecute: " + bv.getItems().get(1).getVolumeInfo().getPageCount());
            // Log.d(TAG, "onPostExecute: "+bv.getItems().get(0).getSaleInfo().getRetailPrice().getAmount());
-            Log.d(TAG, "onPostExecute: "+bv.getItems().get(3).getVolumeInfo().getImageLinks().getThumbnail());
+            Log.d(TAG, "onPostExecute: "+bv.getItems().get(0).getSaleInfo().getRetailPrice().getAmount());
 
             rv.setLayoutManager(new LinearLayoutManager(getActivity()));
             Adapter adapter = new Adapter();
@@ -186,7 +188,9 @@ public class PurchaseFragment extends Fragment {
 
                 if(items.get(position).getVolumeInfo().getAuthors()!=null){
                     holder.tvAuthors.setText(items.get(position).getVolumeInfo().getAuthors().get(0));
-                }else
+                }else{
+
+                }
                 holder.tvDescription.setText(items.get(position).getVolumeInfo().getDescription());
                 holder.tvPageCount.setText(String.valueOf(items.get(position).getVolumeInfo().getPageCount()));
                 if(items.get(position).getSaleInfo().getSaleability()=="FOR_SALE"){
@@ -204,6 +208,11 @@ public class PurchaseFragment extends Fragment {
                 }
                 Glide.with(getActivity()).load(url).centerCrop().into(holder.imgView);
                 holder.tvPublisher.setText(items.get(position).getVolumeInfo().getPublisher());
+                if(items.get(position).getVolumeInfo().getCategories()!=null) {
+                    holder.tvGenres.setText(items.get(position).getVolumeInfo().getCategories().get(0));
+                }else{
+
+                }
 
             }
 
