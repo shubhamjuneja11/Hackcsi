@@ -14,8 +14,8 @@ public class VolumeInfo {
 //    String description;
    int pageCount;
 //    ArrayList<String> categories;
-//    int averageRating;
-//    int ratingsCount;
+    float averageRating;
+    int ratingsCount;
 //    String maturityRating;
     ImageLinks imageLinks;
 //    String language;
@@ -51,13 +51,13 @@ public class VolumeInfo {
 //        return categories;
 //    }
 ////
-//    public int getAverageRating() {
-//        return averageRating;
-//    }
-//
-//    public int getRatingsCount() {
-//        return ratingsCount;
-//    }
+    public float getAverageRating() {
+        return averageRating;
+    }
+
+    public int getRatingsCount() {
+        return ratingsCount;
+    }
 //
 //    public String getMaturityRating() {
 //        return maturityRating;
