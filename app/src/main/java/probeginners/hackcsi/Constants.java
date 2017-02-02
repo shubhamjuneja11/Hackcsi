@@ -5,11 +5,12 @@ package probeginners.hackcsi;
  */
 
 public class Constants {
-    public static String registered_users,from;
+    public static String registered_users,from,requests;
 
     public static void fun(){
         registered_users="https://appathon-bafab.firebaseio.com/registered";
         from="https://appathon-bafab.firebaseio.com/";
+        requests="https://appathon-bafab.firebaseio.com/requests";
     }
     public static String convert1(String a)
     {
