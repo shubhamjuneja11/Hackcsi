@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="probeginners.hackcsi">
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:allowBackup="true"
         android:name=".ChatApplication"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
@@ -20,13 +21,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Signupactivity">
-
-        </activity>
+        <activity android:name=".Signupactivity"></activity>
         <activity android:name=".SigninActivity" />
         <activity android:name=".ForgetPasswordActivity" />
         <activity android:name=".DonatedActivity" />
-        <activity android:name=".PurchasedActivity"></activity>
+        <activity android:name=".PurchasedActivity" />
+        <activity android:name=".view.activities.ChatActivity"></activity>
     </application>
 
 </manifest>

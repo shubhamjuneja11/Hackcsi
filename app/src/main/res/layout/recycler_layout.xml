@@ -12,235 +12,240 @@
         app:cardCornerRadius="4sp"
         app:cardElevation="5sp"
         android:layout_margin="8sp">
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="150sp"
-            android:background="@color/colorPrimaryDark"
-            android:id="@+id/imgView1"/>
-        <TextView
-            android:paddingLeft="10dp"
-            android:layout_width="match_parent"
-            android:textColor="@android:color/holo_green_dark"
-            android:layout_height="wrap_content"
-            android:textStyle="normal|bold"
-            android:textSize="20sp"
-            android:id="@+id/title1"
-            android:textAlignment="center" />
-        <TextView
-            android:paddingLeft="10dp"
-            android:layout_width="match_parent"
-            android:textColor="@android:color/holo_red_dark"
-            android:layout_height="wrap_content"
-            android:textSize="16dp"
-            android:id="@+id/description"
-            android:textAlignment="center"
-            android:textStyle="normal|italic" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:paddingBottom="0dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="7dp"
-                android:layout_width="161dp"
-                android:layout_height="wrap_content"
-                android:text="Authors: "
-                android:textStyle="normal|bold"
-                android:textSize="16dp" />
-            <TextView
-                android:textColor="@android:color/holo_blue_dark"
-                android:layout_weight="1"
-                android:paddingBottom="0dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="7dp"
+            android:layout_height="match_parent">
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textStyle="normal|bold"
-                android:textSize="16dp"
-                android:id="@+id/author"
-                android:textAlignment="textEnd" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_weight="0.46"
-                android:paddingBottom="0dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="7dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pages: "
-                android:textStyle="normal|bold"
-                android:textSize="16dp"/>
-            <TextView
-                android:textColor="@android:color/holo_blue_dark"
-                android:layout_weight="1"
-                android:paddingBottom="0dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="7dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="normal|bold"
-                android:textSize="16dp"
-                android:id="@+id/pageCount"
-                android:textAlignment="textEnd" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_weight="1"
-                android:paddingBottom="0dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="7dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Genres: "
-                android:textStyle="normal|bold"
-                android:textSize="16dp" />
-            <TextView
-                android:textColor="@android:color/holo_blue_dark"
-                android:layout_weight="1"
-                android:paddingBottom="0dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="7dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="normal|bold"
-                android:textSize="16dp"
-                android:id="@+id/genres"
-                android:textAlignment="textEnd" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:paddingBottom="0dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="7dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Saleability: "
-                android:textStyle="normal|bold"
-                android:textSize="16dp" />
-            <TextView
-                android:textColor="@android:color/holo_blue_dark"
-                android:layout_weight="1.27"
-                android:paddingBottom="0dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="7dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="normal|bold"
-                android:textSize="16dp"
-                android:id="@+id/saleability"
-                android:textAlignment="textEnd" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_weight="1"
-                android:paddingBottom="0dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="7dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="M.R.P.:"
-                android:textStyle="normal|bold"
-                android:textSize="16dp" />
-            <TextView
-                android:textColor="@android:color/holo_blue_dark"
-                android:layout_weight="1"
-                android:paddingBottom="0dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="7dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="normal|bold"
-                android:textSize="16dp"
-                android:id="@+id/mrp"
-                android:textAlignment="textEnd" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_weight="1"
-                android:paddingBottom="0dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="7dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Country:"
-                android:textStyle="normal|bold"
-                android:textSize="16dp" />
-            <TextView
-                android:textColor="@android:color/holo_blue_dark"
-                android:layout_weight="1"
-                android:paddingBottom="0dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="7dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="normal|bold"
-                android:textSize="16dp"
-                android:id="@+id/country"
-                android:textAlignment="textEnd" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_weight="1"
-                android:paddingBottom="0dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="7dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Publisher: "
-                android:textStyle="normal|bold"
-                android:textSize="16dp" />
-            <TextView
-                android:textColor="@android:color/holo_blue_dark"
-                android:layout_weight="1"
-                android:paddingBottom="0dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="7dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="normal|bold"
-                android:textSize="16dp"
-                android:id="@+id/publisher"
-                android:textAlignment="textEnd" />
-        </LinearLayout>
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="150sp"
+                    android:background="@color/colorPrimaryDark"
+                    android:id="@+id/imgView1"/>
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:textColor="@android:color/holo_green_dark"
+                    android:layout_height="wrap_content"
+                    android:textStyle="normal|bold"
+                    android:textSize="20sp"
+                    android:id="@+id/title1"
+                    android:textAlignment="center" />
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:lines="5"
+                    android:id="@+id/description"
+                    android:textAlignment="center"
+                    android:textStyle="normal|italic" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:paddingBottom="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="7dp"
+                        android:layout_width="161dp"
+                        android:layout_height="wrap_content"
+                        android:text="Authors: "
+                        android:textStyle="normal|bold"
+                        android:textSize="16dp" />
+                    <TextView
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:layout_weight="1"
+                        android:paddingBottom="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="7dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="normal|bold"
+                        android:textSize="16dp"
+                        android:id="@+id/author"
+                        android:textAlignment="textEnd" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_weight="0.46"
+                        android:paddingBottom="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="7dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pages: "
+                        android:textStyle="normal|bold"
+                        android:textSize="16dp"/>
+                    <TextView
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:layout_weight="1"
+                        android:paddingBottom="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="7dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="normal|bold"
+                        android:textSize="16dp"
+                        android:id="@+id/pageCount"
+                        android:textAlignment="textEnd" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_weight="1"
+                        android:paddingBottom="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="7dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Genres: "
+                        android:textStyle="normal|bold"
+                        android:textSize="16dp" />
+                    <TextView
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:layout_weight="1"
+                        android:paddingBottom="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="7dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="normal|bold"
+                        android:textSize="16dp"
+                        android:id="@+id/genres"
+                        android:textAlignment="textEnd" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:paddingBottom="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="7dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Saleability: "
+                        android:textStyle="normal|bold"
+                        android:textSize="16dp" />
+                    <TextView
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:layout_weight="1.27"
+                        android:paddingBottom="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="7dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="normal|bold"
+                        android:textSize="16dp"
+                        android:id="@+id/saleability"
+                        android:textAlignment="textEnd" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_weight="1"
+                        android:paddingBottom="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="7dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="M.R.P.:"
+                        android:textStyle="normal|bold"
+                        android:textSize="16dp" />
+                    <TextView
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:layout_weight="1"
+                        android:paddingBottom="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="7dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="normal|bold"
+                        android:textSize="16dp"
+                        android:id="@+id/mrp"
+                        android:textAlignment="textEnd" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_weight="1"
+                        android:paddingBottom="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="7dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Country:"
+                        android:textStyle="normal|bold"
+                        android:textSize="16dp" />
+                    <TextView
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:layout_weight="1"
+                        android:paddingBottom="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="7dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="normal|bold"
+                        android:textSize="16dp"
+                        android:id="@+id/country"
+                        android:textAlignment="textEnd" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_weight="1"
+                        android:paddingBottom="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="7dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Publisher: "
+                        android:textStyle="normal|bold"
+                        android:textSize="16dp" />
+                    <TextView
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:layout_weight="1"
+                        android:paddingBottom="0dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="7dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="normal|bold"
+                        android:textSize="16dp"
+                        android:id="@+id/publisher"
+                        android:textAlignment="textEnd" />
+                </LinearLayout>
             </LinearLayout>
+        </ScrollView>
     </android.support.v7.widget.CardView>
 </LinearLayout>
