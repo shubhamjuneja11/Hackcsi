@@ -47,6 +47,7 @@ public class SigninActivity extends AppCompatActivity {
             //intent.putExtra("FROM_USER", email);
             startActivity(intent);
             finish();*/
+
         }
 
         ema=(EditText)findViewById(R.id.emailsi);
