@@ -14,6 +14,20 @@
         <activity
             android:name=".NavActivity"
             android:label="@string/title_activity_nav"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustNothing">
+
+        </activity>
+        <activity android:name=".Signupactivity" />
+        <activity android:name=".SigninActivity" />
+        <activity android:name=".ForgetPasswordActivity" />
+        <activity android:name=".DonatedActivity" />
+        <activity android:name=".PurchasedActivity" />
+        <activity android:name=".view.activities.ChatActivity" />
+        <activity
+
+            android:name="view.SplashActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,12 +35,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Signupactivity"></activity>
-        <activity android:name=".SigninActivity" />
-        <activity android:name=".ForgetPasswordActivity" />
-        <activity android:name=".DonatedActivity" />
-        <activity android:name=".PurchasedActivity" />
-        <activity android:name=".view.activities.ChatActivity"></activity>
     </application>
 
 </manifest>

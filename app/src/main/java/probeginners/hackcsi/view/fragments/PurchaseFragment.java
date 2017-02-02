@@ -200,6 +200,7 @@ public class PurchaseFragment extends Fragment implements View.OnClickListener{
             Log.d(TAG, "onPostExecute: " + bv.getTotalItems());
             Log.d(TAG, "onPostExecute: " + bv.getItems().get(1).getVolumeInfo().getPageCount());
            // Log.d(TAG, "onPostExecute: "+bv.getItems().get(0).getSaleInfo().getRetailPrice().getAmount());
+            Log.d(TAG, "onPostExecute: "+bv.getItems().get(3).getVolumeInfo().getImageLinks().getThumbnail());
 
             rv.setLayoutManager(new LinearLayoutManager(getActivity()));
             Adapter adapter = new Adapter();
@@ -269,6 +270,11 @@ public class PurchaseFragment extends Fragment implements View.OnClickListener{
                 }
                 Glide.with(getActivity()).load(url).centerCrop().into(holder.imgView);
                 holder.tvPublisher.setText(items.get(position).getVolumeInfo().getPublisher());
+                if(items.get(position).getVolumeInfo().getCategories()!=null) {
+                    holder.tvGenres.setText(items.get(position).getVolumeInfo().getCategories().get(0));
+                }else{
+
+                }
 
             }
 
@@ -277,5 +283,8 @@ public class PurchaseFragment extends Fragment implements View.OnClickListener{
                 return bv.getItems().size();
             }
         }
+    }
+    double getPoints(double mrp){
+        return (1.0)*mrp/10;
     }
 }
