@@ -27,22 +27,26 @@
                 <TextView
                     android:paddingLeft="10dp"
                     android:layout_width="match_parent"
-                    android:textColor="@android:color/holo_green_dark"
+                    android:textColor="#424242"
+                    android:padding="5sp"
                     android:layout_height="wrap_content"
-                    android:textStyle="normal|bold"
+                    android:textStyle="bold"
                     android:textSize="20sp"
                     android:id="@+id/title1"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:fontFamily="sans-serif-smallcaps"/>
                 <TextView
                     android:paddingLeft="10dp"
                     android:layout_width="match_parent"
-                    android:textColor="@android:color/holo_red_dark"
+                    android:textColor="#757575"
+                    android:padding="5sp"
                     android:layout_height="wrap_content"
                     android:textSize="16dp"
                     android:lines="5"
                     android:id="@+id/description"
                     android:textAlignment="center"
-                    android:textStyle="normal|italic" />
+                    android:textStyle="bold"
+                    android:fontFamily="casual"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
