@@ -21,6 +21,15 @@
             android:textSize="20sp"
             android:id="@+id/title"
             android:textAlignment="center" />
+        <TextView
+            android:paddingLeft="10dp"
+            android:layout_width="match_parent"
+            android:textColor="@android:color/holo_red_dark"
+            android:layout_height="wrap_content"
+            android:textStyle="normal|bold"
+            android:textSize="16dp"
+            android:id="@+id/description"
+            android:textAlignment="center" />
 
         <LinearLayout
             android:layout_width="match_parent"
