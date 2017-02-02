@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardElevation="5sp"
+    android:layout_margin="8sp"
+    android:padding="4sp"
+    app:cardCornerRadius="3sp">
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/one"
+            android:text="Book Name"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:padding="4sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/one"
+            android:text="Angels"
+            android:padding="4sp"
+            android:textSize="20sp"
+            android:id="@+id/b_name"/>
+
+        <TextView
+            android:layout_below="@+id/one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/two"
+            android:text=""
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:padding="4sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/two"
+            android:layout_below="@+id/b_name"
+            android:text=""
+            android:padding="4sp"
+            android:textSize="20sp"
+            android:id="@+id/b_year"/>
+
+        <TextView
+            android:layout_below="@+id/two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/three"
+            android:text="Book Author"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:padding="4sp"/>
+
+        <TextView
+            android:layout_below="@+id/b_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/three"
+            android:text="Book Merian Angels"
+            android:padding="4sp"
+            android:textSize="20sp"
+            android:id="@+id/b_author"/>
+
+        <TextView
+            android:layout_below="@+id/three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/four"
+            android:text="Book M.R.P."
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:padding="4sp"/>
+
+        <TextView
+            android:layout_below="@+id/b_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/four"
+            android:text="INR 150"
+            android:padding="4sp"
+            android:textSize="20sp"
+            android:id="@+id/b_mrp"/>
+
+
+
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
