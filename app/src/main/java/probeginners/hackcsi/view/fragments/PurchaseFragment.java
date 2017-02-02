@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 
 import java.io.BufferedReader;
@@ -175,12 +176,14 @@ public class PurchaseFragment extends Fragment {
                 holder.tvCountry.setText(items.get(position).getAccessInfo().getCountry());
                 holder.tvSaleability.setText(items.get(position).getSaleInfo().getSaleability());
                 holder.tvTitle.setText(items.get(position).getVolumeInfo().getTitle());
-               //holder.imgView.setImageURI(Uri.parse(items.get(position).getVolumeInfo().getImageLinks().getThumbnail()));
-//                try {
-//                    holder.imgView.setImageBitmap(BitmapFactory.decodeStream(new URL(items.get(position).getVolumeInfo().getImageLinks().getThumbnail()).openConnection().getInputStream()));
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
+
+                String url;
+                if(items.get(position).getVolumeInfo().getImageLinks().getThumbnail()==null){
+                    url = "https://d13yacurqjgara.cloudfront.net/users/39185/screenshots/3259335/rabbit_1x.jpg";
+                }else{
+                    url = items.get(position).getVolumeInfo().getImageLinks().getThumbnail();
+                }
+                Glide.with(getActivity()).load(url).centerCrop().into(holder.imgView);
                 holder.tvPublisher.setText(items.get(position).getVolumeInfo().getPublisher());
 
             }
